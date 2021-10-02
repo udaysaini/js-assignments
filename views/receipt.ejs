@@ -1,0 +1,105 @@
+<%
+    const POSTER_PRICE = 4.99;
+%>
+
+<%- include('layouts/header') -%>
+<body>
+    <div>
+        <%- include('layouts/nav'); -%>
+
+        <div class="container">
+            <div>
+                <div class="row center-align m20">
+                    <h4 class="shop-title">RECEIPT</h4>
+                </div>
+
+                <!-- RECEIPT -->
+                <div class="row">
+                    <div class="col m10 offset-m1 box-style" id="receipt-div">
+                        <div class="center-align receipt-wishes">
+                            <span>THANK YOU FOR SHOPPING WITH US.</span> <br />
+                            <span>HAVE A GREAT DAY!</span> <br />
+                        </div>
+
+                        <div class="center-align receipt-logo logo" style="font-size:2.5em;">GEEKYATHELTE DESIGNS</div>
+
+                        <% if (typeof(totalAmt) != 'undefined') {  %>
+
+                        <div>
+                            Customer Name: <b><span id="customer-name"> <%= firstName %> <%= lastName %> </span></b> <br />
+                            Address: <b><span> <%= address %>, <%= city %>, <%= province %>, <%= postcode %> </span></b> <br />
+                            <% if (phoneno != '') { %>
+                                Phone No.: <b><span> <%= phoneno %> </span></b> <br />
+                            <% } %>
+                            <% if (email != '') { %>
+                                Email: <b><span> <%= email %> </span></b> <br />
+                            <% } %>
+                            <hr />
+                        </div>
+                        <table id="receiptTable">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Qty</th>
+                                    <th>Price (in CA$)</th>
+                                    <th>Total Price (in CA$)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% if (poster1Qty > 0) { %>
+                                    <tr>
+                                        <td>Be A Goldfish&reg; Poster</td>
+                                        <td> <%= poster1Qty %> </td>
+                                        <td> <%= POSTER_PRICE %> </td>
+                                        <td> <%= poster1total %> </td>
+                                    </tr>    
+                                <% } %>
+                                <% if (poster2Qty > 0) { %>
+                                    <tr>
+                                        <td>All People are Different People&reg; Poster</td>
+                                        <td> <%= poster2Qty %> </td>
+                                        <td> <%= POSTER_PRICE %> </td>
+                                        <td> <%= poster2total %> </td>
+                                    </tr>    
+                                <% } %>
+                                <% if (poster3Qty > 0) { %>
+                                    <tr>
+                                        <td>I Believe in Believe&reg; Poster</td>
+                                        <td> <%= poster3Qty %> </td>
+                                        <td> <%= POSTER_PRICE %> </td>
+                                        <td> <%= poster3total %> </td>
+                                    </tr>    
+                                <% } %>        
+                                <tr>
+                                    <td colspan="3" class="center-align"><strong>Sub-Total</strong></td>
+                                    <td id="sub-total-amt"> CA$<%= subTotal %> </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" class="center-align"><strong>State Tax (<%= stateTax %>%) </strong></td>
+                                    <td id="tax-amt">CA$<%= taxAmt %></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" class="center-align"><strong>Total Payable</strong></td>
+                                    <td id="total-amt">CA$<%= totalAmt %></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <% } %>
+
+                        <br>
+                        <div class="row center-align">
+                            <button class="btn submitbtn waves-effect" type="button" >
+                                <a href="/orders" style="color:white;"> 
+                                    <strong>Check all Orders</strong>
+                                </a>
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<%- include('layouts/footer'); -%>

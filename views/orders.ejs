@@ -1,0 +1,67 @@
+<%
+    const POSTER_PRICE = 4.99;
+%>
+
+<%- include('layouts/header') -%>
+<body>
+    <div>
+        <%- include('layouts/nav'); -%>
+
+        <div class="container">
+            <div>
+                <div class="row center-align m20">
+                    <h4 class="shop-title">ORDERS</h4>
+                </div>
+
+                <!-- RECEIPT -->
+                <div class="row">
+                    <div class="col m11 offset-m1 box-style" id="receipt-div" >
+                        <div class="center-align receipt-wishes">
+                            <span>THANK YOU FOR SHOPPING WITH US.</span> <br />
+                            <span>HAVE A GREAT DAY!</span> <br />
+                        </div>
+
+                        <div class="center-align receipt-logo logo" style="font-size:2.5em;">GEEKYATHELTE DESIGNS</div>
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Name <br> Email <br> Phone</th>
+                                    <th>Address <br> Delivery Time</th>
+                                    <th>Order Details </th>
+                                    <th>Sub-Total <br> State Tax <br>Total Payable</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% for (let i of orders ) { %>
+                                <tr>
+                                    <td><%= i.firstName %> <%= i.lastName %> <br> <%= i.email %> <br> <%= i.phoneno %> </td>
+                                    <td><%= i.address %>, <%= i.city %>, <%= i.province %>, <%= i.postcode %> <br> 
+                                        <%= i.deliverytime %> 
+                                    </td>
+                                    <td>                    
+                                        <!-- <%= i.poster1Details.poster1total %> -->
+                                        <span> 
+                                            <strong><%= i.poster1Details.poster1Qty %>x</strong> Be A Goldfish&reg; Poster @<strong><%= POSTER_PRICE %></strong>
+                                        </span> 
+                                        <hr>
+                                        <span>
+                                            <strong><%= i.poster2Details.poster2Qty %>x</strong> All People are Different People&reg; Poster @<strong><%= POSTER_PRICE %></strong>
+                                        </span> 
+                                        <hr>
+                                        <span>
+                                            <strong><%= i.poster3Details.poster3Qty %>x</strong> I Believe in Believe&reg; Poster @<strong><%= POSTER_PRICE %></strong>
+                                        </span> <br>
+                                    </td>
+                                    <td> CA$<%= i.subTotal %> <br> CA$<%= i.taxAmt %> <br> CA$<%= i.totalAmt %> </td>
+                                </tr>
+                                <% } %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<%- include('layouts/footer'); -%>

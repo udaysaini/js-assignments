@@ -1,0 +1,198 @@
+:root {
+  --primary-color: #85CCFF;
+  --accent-color: #C2E6FF;
+  --heading-color: #1a237e;
+
+}
+body {
+  font-family: "Poppins", Sans-serif;
+  margin: 0;
+  background: linear-gradient(60deg, #ffffff 0%, var(--primary-color) 60%);
+  /* background-color: rgba(233, 233, 233, 0.6); */
+}
+
+.brand-logo {
+  margin-top: -10px;
+}
+
+.box-style{
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+
+#receipt-div {
+  background-color: #fff;
+}
+
+.receipt-logo {
+  margin-top: 15px;
+}
+
+.receipt-wishes {
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+#customer-name {
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+
+.announcement {
+  font-size: 40px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.logo {
+  font-family: balboa-plus-fill,sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 55px;
+  color: var(--heading-color);
+  text-transform: uppercase;
+}
+
+.submitbtn {
+  background-color: rgb(27, 27, 27);
+  color: white;
+  font-size: 20px;
+  height: 50px;
+  width: 95%;
+}
+
+#form-errors {
+  border: 2px solid black;
+  padding: 20px;
+  margin: 0px 3%;
+}
+
+.error-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#errors {
+  color: red;
+  text-align: center;
+  font-size: 17px;
+}
+
+.sale-announcement {
+  font-size: 45px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.sale-sub {
+  font-size: 23px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.sale-signup {
+  font-size: 18px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.m20 {
+  margin: 20px 0;
+}
+
+.m50 {
+  margin: 50px 10px;
+}
+
+
+.title-text {
+  color: var(--heading-color);
+  font-family: 'Raleway', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding-top: 25px;
+}
+
+.desc-text {
+  color: var(--heading-color);
+  font-family: 'Roboto Slab', sans-serif;
+  font-weight: 300;
+  padding: 0 0 35px 0;
+  font-size: 130%;
+}
+
+.toggle:hover {
+  cursor: pointer;
+  color:#1a237e;
+  text-decoration: underline;
+}
+
+.mid-title {
+  font-size: 30px;
+}
+
+
+.shop-title {
+  color: var(--heading-color);
+  font-family: 'Raleway', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+
+.buy-price {
+  
+  font-weight: 300;
+  font-size: 25px;
+}
+
+.buy-value {
+  font-weight: 300;
+  font-size: 50px;
+}
+
+p {
+  text-align: justify;
+}
+
+.website-logo:hover {
+  cursor: pointer;
+}
+
+.empathy-series {
+  font-size: 0.4em;
+}
+
+.shop-button {
+  top: 20px;
+}
+
+footer p {
+  text-align: center;
+}
+
+footer p a:hover {
+  font-weight: 700;
+  color: var(--heading-color);
+}
+
+.nav-link {
+  color:black;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+/* 
+font-family: 'Bona Nova', serif;
+font-family: 'Heebo', sans-serif;
+font-family: 'Josefin Sans', sans-serif;
+font-family: 'Merriweather', serif;
+font-family: 'Raleway', sans-serif;
+font-family: 'Roboto Slab', serif; */

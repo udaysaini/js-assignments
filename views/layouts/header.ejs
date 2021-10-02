@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.6" />
+        <title>Project GeekyAthlete</title>
+
+        <link rel="shortcut icon" href="icon/favicon.png" type="image/x-icon" />
+
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+        <link rel="stylesheet" href="https://use.typekit.net/zwj0ggi.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Bona+Nova:ital@0;1&family=Heebo:wght@600;700;800&family=Josefin+Sans:wght@300;400&family=Merriweather:ital,wght@1,300;1,400&family=Raleway:wght@600;700;800&family=Roboto+Slab:wght@300;500&display=swap" rel="stylesheet" />
+
+        <!-- Compiled and minified JavaScript & JQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+        <link rel="stylesheet" href="css/styles.css" />
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var elems = document.querySelectorAll('select');
+                var instances = M.FormSelect.init(elems, options);
+            });
+
+            // Or with jQuery
+
+            $(document).ready(function(){
+                $('select').formSelect();
+            });
+        </script>
+    </head>

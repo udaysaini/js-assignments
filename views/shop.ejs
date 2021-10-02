@@ -1,0 +1,368 @@
+<%
+    const POSTER_PRICE = 4.99;
+
+    var firstName = '';
+    var lastName = '';
+    var address = '';
+    var city = '';
+    var province = '';
+    var postcode = '';
+    var phoneno = '';
+    var email = '';
+    var poster1Qty = 0;
+    var poster2Qty = 0;
+    var poster3Qty = 0;
+    var deliverytime = '';
+
+    var firstNameError = '';
+    var lastNameError = '';
+    var addressError = '';
+    var cityError = '';
+    var provinceError = '';
+    var postcodeError = '';
+    var phonenoError = '';
+    var emailError = '';
+    var posterError = '';
+    var deliverytimeError = '';
+
+    if(typeof(errors) != 'undefined') {
+        for (let err of errors) { 
+            switch(err.param) {
+                case 'firstName':
+                    firstName = err.value;
+                    firstNameError = err.msg;
+                    break;
+                case 'lastName':
+                    lastName = err.value;
+                    lastNameError = err.msg;
+                    break;
+                case 'address':
+                    address = err.value;
+                    addressError = err.msg;
+                    break;
+                case 'city':
+                    city = err.value;
+                    cityError = err.msg;
+                    break;
+                case 'province':
+                    province = err.value;
+                    provinceError = err.msg;
+                    break;
+                case 'postcode':
+                    postcode = err.value;
+                    postcodeError = err.msg;
+                    break;
+                case 'phoneno':
+                    phoneno = err.value;
+                    phonenoError = err.msg;
+                    break;
+                case 'email':
+                    email = err.value;
+                    emailError = err.msg;
+                    break;
+                case 'deliverytime':
+                    deliverytime = err.value;
+                    deliverytimeError = err.msg;
+                    break;
+                case 'poster1Qty':
+                case 'poster2Qty':
+                case 'poster3Qty':
+                    posterError = err.msg;
+                    break;
+            }
+        }
+
+        if(formData != 'undefined') {
+            firstName = formData.firstName;
+            lastName = formData.lastName;
+            address = formData.address;
+            city = formData.city;
+            province = formData.province;
+            postcode = formData.postcode;
+            phoneno = formData.phoneno;
+            email = formData.email;
+            poster1Qty = formData.poster1Qty;
+            poster2Qty = formData.poster2Qty;
+            poster3Qty = formData.poster3Qty;
+            deliverytime = formData.deliverytime;
+        }
+    }
+ 
+const provinceDetails = [
+{
+    "provinceName": 'Alberta',
+    "tax": .05
+}, 
+{
+    "provinceName": 'British Columbia',
+    "tax": .12
+}, 
+{
+    "provinceName": 'Manitoba',
+    "tax": .12
+}, 
+{
+    "provinceName": 'New Brunswick',
+    "tax": .15
+}, 
+{
+    "provinceName": 'Newfoundland and Labrador',
+    "tax": .15
+}, 
+{
+    "provinceName": 'Northwest Territories',
+    "tax": .05
+}, 
+{
+    "provinceName": 'Nova Scotia',
+    "tax": .15
+}, 
+{
+    "provinceName": 'Nunavut',
+    "tax": .05
+}, 
+{
+    "provinceName": 'Ontario',
+    "tax": .13
+}, 
+{
+    "provinceName": 'Prince Edward Island',
+    "tax": .15
+}, 
+{
+    "provinceName": 'Quebec',
+    "tax": .149
+}, 
+{
+    "provinceName": 'Saskatchewan',
+    "tax": .11
+}, 
+{
+    "provinceName": 'Yukon',
+    "tax": .05
+}
+];
+%>
+
+<%- include('layouts/header') -%>
+<body>
+    <div>
+        <%- include('layouts/nav'); -%>
+
+        <div class="container">
+            <div>
+                <div class="row center-align m20">
+                    <h3 class="shop-title">SHOP</h3>
+                </div>
+
+
+                <div class="row">
+                    <div class="col m6">
+                        <h4>Be A Goldfish&reg; Poster <span class="empathy-series">(Empathy Series&trade;)</span> </h4>
+                        <ul class="browser-default" >
+                            <li>Best in Class GeekTech&trade; Paper.</li>
+                            <li>Best Print Quality to ensure most crisp and color accurate printing.</li>
+                            <li>Paper Type: 210GSM</li>
+                            <li>NOTE: Remember to "Be a Goldfish".</li>
+                        </ul>
+                        <div class="row">
+                            <div class="col m12 buy-price">
+                                CA$ <span class="buy-value"> <%= POSTER_PRICE %> </span>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                    <div class="col m6">
+                        <img src="../img/products/beagoldfish_shadow.png" width="550px" alt="A custom JBS Dreambook in blue pattern" />
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="row">
+                    <div class="col m6">
+                        <h4>All People are Different People&reg; Poster <span class="empathy-series">(Empathy Series&trade;)</span>	</h4>
+                        <ul class="browser-default"  >
+                            <li>Best in Class GeekTech&trade; Paper.</li>
+                            <li>Best Print Quality to ensure most crisp and color accurate printing.</li>
+                            <li>Paper Type: 210GSM</li>
+                            <li>NOTE: Remember that all people are different with their own beautiful backstories and flaws. Treat them with kindness.</li>
+                        </ul>
+                        <div class="row">
+                            <div class="col m12 buy-price">
+                                CA$ <span class="buy-value"> <%= POSTER_PRICE %> </span>
+                            </div>
+                            <!-- <div class="col m4">
+                                <button class="btn waves-effect waves-light indigo darken-4 shop-button" >ADD TO CART</button>
+                            </div> -->
+                        </div>
+                        <br>
+                    </div>
+                    
+                    <div class="col m6">
+                        <img src="../img/products/allpeoplearedifferentpeople_shadow.png" width="550px" alt="A Custom JBS Radient Pen in yellow color with Be a Goldfish." />
+                    </div>
+                    
+                </div>
+
+                <hr>
+
+                <div class="row">
+                    <div class="col m6">
+                        <h4>I Believe in Believe&reg; Poster <span class="empathy-series">(Empathy Series&trade;)</span></h4>
+                        <ul class="browser-default" >
+                            <li>Best in Class GeekTech&trade; Paper.</li>
+                            <li>Best Print Quality to ensure most crisp and color accurate printing.</li>
+                            <li>Paper Type: 210GSM</li>
+                            <li>NOTE: Remember to "Believe".</li>
+                        </ul>
+                        <div class="row">
+                            <div class="col m12 buy-price">
+                                CA$ <span class="buy-value"> <%= POSTER_PRICE %> </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col m6">
+                        <img src="../img/products/ibelieveinbelieve_shadow.png" width="550px" alt="Custom JBS Bag in blue color." />
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="row center-align m20">
+                    <h4 class="shop-title">Customer Form</h4>
+                </div>
+                
+                <!-- BUY FORM -->
+                <div class="row" id="purchase-form">
+                    <form class="col s12" method="POST" action="/" autocomplete="off">
+                        <div class="row">
+                            <div class="input-field col m6">
+                                <i class="material-icons prefix">account_circle</i>
+                                <input id="firstName" name="firstName" value="<%= firstName %>" type="text"  class=" <%- firstNameError != '' ? 'validate invalid' : 'validate' %>" />
+                                <label for="firstName">First Name*</label>
+                                <span class="helper-text" data-error="<%= firstNameError %>"><b>Only letters from alphabet allowed</b></span>
+                            </div>
+                            <div class="input-field col m6">
+                                <input id="lastName" name="lastName" value="<%= lastName %>" type="text" class=" <%- lastNameError != '' ? 'validate invalid' : 'validate' %>" />
+                                <label for="lastName">Last Name*</label>
+                                <span class="helper-text" data-error="<%= lastNameError %>" ><b>Only letters from alphabet allowed</b></span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col m12">
+                                <i class="material-icons prefix">home</i>
+                                <input id="address" name="address" value="<%= address %>" type="text"  class=" <%- addressError != '' ? 'validate invalid' : 'validate' %>" />
+                                <label for="address">Address*</label>
+                                <span class="helper-text" data-error="<%= addressError %>"><b>Only Characters, Numbers, and Special Characters (,-) allowed.</b></span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col m3">
+                                <i class="material-icons prefix">location_city</i>
+                                <input id="city" name="city" value="<%= city %>" type="text"  class=" <%- cityError != '' ? 'validate invalid' : 'validate' %>" />
+                                <label for="city">City*</label>
+                                <span class="helper-text" data-error="<%= cityError %>"><b>Only letters from alphabet allowed.</b></span>
+                            </div>
+                            <div class="input-field col m3">
+                                <!-- <i class="material-icons prefix">postal</i> -->
+                                <input id="postcode" name="postcode" value="<%= postcode %>" type="text"  class=" <%- postcodeError != '' ? 'validate invalid' : 'validate' %>" />
+                                <label for="postcode">Post Code*</label>
+                                <span class="helper-text" data-error="<%= postcodeError %>"><b>Please enter a valid Pin Code (A2A A2A)</b></span>
+                            </div>
+                            <div class="input-field col m6">
+                                <select id="province" name="province" value="<%= province %>" type="text"  class=" <%- provinceError != '' ? 'validate invalid' : 'validate' %>"  >
+                                    <option value="" disabled selected>Choose your option</option>
+                                    <% for (let province of provinceDetails ) { %>
+                                      <option value="<%= province.provinceName %>"><%= province.provinceName %></option>
+                                    <% } %>
+                                </select>
+                                <label for="province">Province*</label>
+                                <span class="helper-text" data-error="<%= provinceError %>"><b>Please select a valid Province.</b></span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col m6">
+                                <i class="material-icons prefix">phone</i>
+                                <input id="phoneno" name="phoneno" value="<%= phoneno %>" type="text"  class=" <%- phonenoError != '' ? 'validate invalid' : 'validate' %>" />
+                                <label for="phoneno">Phone*</label>
+                                <span class="helper-text" data-error="<%= phonenoError %>"><b>Please enter a valid Phone Number (10 digits)</b></span>
+                            </div>
+                            <div class="input-field col m6">
+                                <i class="material-icons prefix">email</i>
+                                <input id="email" name="email" value="<%= email %>" type="text"  class=" <%- emailError != '' ? 'validate invalid' : 'validate' %>" />
+                                <label for="email">Email*</label>
+                                <span class="helper-text" data-error="<%= emailError %>"><b>Please enter a valid Email Address. eg. username@website.com</b></span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col m4">
+                                <i class="material-icons prefix">tag</i>
+                                <input id="poster1Qty" name="poster1Qty" value="<%= poster1Qty %>" type="text" class=" <%- posterError != '' ? 'validate invalid' : 'validate' %>"  />
+                                <label for="poster1Qty">No. of Be Like Goldfish Poster(s)</label>
+                                <span class="helper-text"  data-error="<%= posterError %>"> <b>Only Numbers allowed. Max Quantity: 999</b> </span>
+                            </div>
+                            <div class="input-field col m4">
+                                <i class="material-icons prefix">tag</i>
+                                <input id="poster2Qty" name="poster2Qty" value="<%= poster2Qty %>" type="text" class=" <%- posterError != '' ? 'validate invalid' : 'validate' %>"   />
+                                <label for="poster2Qty" style="font-size:0.8em">No. of All People are Different People Poster(s)</label>
+                                <span class="helper-text"  data-error="<%= posterError %>"> <b>Only Numbers allowed. Max Quantity: 999</b> </span>
+                            </div>
+                            <div class="input-field col m4">
+                                <i class="material-icons prefix">tag</i>
+                                <input id="poster3Qty" name="poster3Qty" value="<%= poster3Qty %>" type="text" class=" <%- posterError != '' ? 'validate invalid' : 'validate' %>"   />
+                                <label for="poster3Qty">No. of I Believe in Believe Poster(s)</label>
+                                <span class="helper-text"  data-error="<%= posterError %>"> <b>Only Numbers allowed. Max Quantity: 999</b> </span>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="input-field col m12">
+                                <i class="material-icons prefix">schedule</i>
+                                <select id="deliverytime" name="deliverytime" value="<%= deliverytime %>" type="text"  class=" <%- deliverytimeError != '' ? 'validate invalid' : 'validate' %>"  >
+                                    <option value="" disabled selected>Choose your option</option>
+                                    <option value="1 day" >1 day</option>
+                                    <option value="2 days" >2 days</option>
+                                    <option value="3 days" >3 days</option>
+                                </select>
+                                <label for="deliverytime">Delivery Time</label>
+                                <span class="helper-text" data-error="<%= deliverytimeError %>"><b>Please select a valid Delivery Time.</b></span>
+                            </div>
+                        </div>
+
+
+                        <%
+                            if(typeof(errors) != 'undefined') {
+                        %>
+
+                        <div class="row center-align" id="form-errors">
+                            <span class="error-title">ERRORS</span>
+                            <%
+                                for (let err of errors) { 
+                            %>
+                                <p id="errors"> <strong><%= err.msg %></strong> </p>
+                            <%
+                                }
+                            %>          
+                        </div>
+                        <%  
+                            }
+                        %>
+
+                        <br />
+                        <div class="row center-align">
+                            <button class="btn submitbtn waves-effect" type="submit">
+                                <strong>CHECKOUT</strong>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<%- include('layouts/footer'); -%>
